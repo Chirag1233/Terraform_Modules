@@ -1,5 +1,5 @@
 resource "azurerm_management_lock" "lock" {
-  count      = "${lenght(var.resource_Id)}"
+  count      = "${length(var.resource_Id)}"
   name       = "${element(var.resource_Id, count.index)}-lock"
   scope      = "${element(var.resource_Id, count.index)}"
   lock_level = "CanNotDelete"
